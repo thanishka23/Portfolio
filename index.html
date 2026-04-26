@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanishka Varma - Full Stack Developer</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="scroll-progress"></div>
+    <div class="noise-overlay"></div>
+    <canvas id="bg-canvas"></canvas>
+    <div class="cursor-glow"></div>
+    <div class="cursor-outer"></div>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-icon">TV</span>
+          <span class="logo-text">Thanishka</span>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <section id="home" class="hero">
+      <div class="stars"></div>
+      <div class="hero-content">
+        <div class="hero-text animate-fade-in">
+          <p class="hero-greeting">✨ Welcome to my portfolio</p>
+          <h1 class="hero-title">Thanishka Varma</h1>
+          <p class="hero-subtitle">
+            Full Stack Developer | UI/UX Enthusiast | Problem Solver
+          </p>
+          <p class="hero-description">
+            Crafting beautiful, responsive web applications with modern
+            technologies. Passionate about clean code and exceptional user
+            experiences.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Get In Touch
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <i class="fas fa-briefcase"></i> View My Work
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a
+              href="https://github.com/thanishka23"
+              target="_blank"
+              class="social-btn"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/thanishka-varma-11a625332"
+              target="_blank"
+              class="social-btn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:thanishka2307@gmail.com" class="social-btn">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image animate-slide-up">
+          <div class="image-wrapper">
+            <img src="assets/MY PHOTO.jpg" alt="Thanishka Varma" />
+            <div class="glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <div class="header-underline"></div>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm <strong>Thanishka Varma</strong>, a passionate full-stack
+              developer and a second-year B.Tech Computer Science student. I
+              thrive on building applications that solve real-world problems
+              with elegant, efficient solutions.
+            </p>
+
+            <p>
+              My expertise spans modern web technologies including React,
+              Node.js, and MongoDB. Beyond coding, I'm an enthusiast in UI/UX
+              design, video editing, and visual content creation.
+            </p>
+
+            <p>
+              I've actively participated in hackathons and built projects that
+              showcase my ability to translate ideas into functional,
+              user-centric applications. I'm always eager to learn, collaborate,
+              and push the boundaries of what's possible in web development.
+            </p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <h3>5+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="stat-card">
+              <h3>2+</h3>
+              <p>Hackathons Participated</p>
+            </div>
+            <div class="stat-card">
+              <h3>8+</h3>
+              <p>Technologies</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>2024 – Present</h4>
+              <h3>B.Tech – Computer Science Engineering</h3>
+              <p>
+                Pursuing B.Tech in CS from SRM University AP with focus on
+                programming, data structures, and web development.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>2022 – 2024</h4>
+              <h3>Intermediate Education</h3>
+              <p>
+                Built strong academic foundation with focus on science and
+                mathematics, sparking interest in programming.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h4>2022</h4>
+              <h3>School Education</h3>
+              <p>
+                Completed schooling at Sri Chaitanya Techno School with a strong
+                foundation in academics and curiosity toward technology.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2>Technical Skills</h2>
+          <div class="header-underline"></div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Frontend</h3>
+            <div class="skill-list">
+              <span class="skill-badge">HTML5</span>
+              <span class="skill-badge">CSS3</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Backend</h3>
+            <div class="skill-list">
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">Express</span>
+              <span class="skill-badge">MongoDB</span>
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">REST API</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Programming</h3>
+            <div class="skill-list">
+              <span class="skill-badge">C</span>
+              <span class="skill-badge">C++</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">DSA</span>
+              <span class="skill-badge">OOP</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Tools & Platforms</h3>
+            <div class="skill-list">
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">GitHub</span>
+              <span class="skill-badge">VS Code</span>
+              <span class="skill-badge">Figma</span>
+              <span class="skill-badge">Postman</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Projects</h2>
+          <div class="header-underline"></div>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-print"></i>
+              </div>
+              <div class="project-badges">
+                <span class="badge badge-react">React</span>
+                <span class="badge badge-node">Node.js</span>
+              </div>
+            </div>
+
+            <h3>SmartPrint – Print Queue Management</h3>
+            <p>
+              A comprehensive full-stack web application for college print
+              environments. Students can upload documents, track print status,
+              and manage requests efficiently with an intuitive staff dashboard.
+            </p>
+
+            <div class="project-tech">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>Express.js</span>
+            </div>
+
+            <div class="project-links">
+              <a
+                href="https://github.com/thanishka23/printing-website"
+                target="_blank"
+                class="link"
+              >
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a
+                href="https://campusprinting.vercel.app/auth"
+                target="_blank"
+                class="link"
+              >
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="project-badges">
+                <span class="badge badge-js">JavaScript</span>
+              </div>
+            </div>
+
+            <h3>E-Commerce Platform Clone</h3>
+            <p>
+              A fully functional e-commerce platform inspired by Myntra.
+              Features dynamic product listings, shopping cart functionality,
+              and smooth checkout flow with responsive design.
+            </p>
+
+            <div class="project-tech">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+
+            <div class="project-links">
+              <a
+                href="https://github.com/thanishka23/myntra-clone"
+                target="_blank"
+                class="link"
+              >
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="project-badges">
+                <span class="badge badge-js">JavaScript</span>
+              </div>
+            </div>
+
+            <h3>Portfolio Website</h3>
+            <p>
+              A responsive and visually stunning personal portfolio to showcase
+              skills, projects, and academic journey. Features smooth animations
+              and modern design principles.
+            </p>
+
+            <div class="project-tech">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+
+            <div class="project-links">
+              <a
+                href="https://github.com/thanishka23/portfolio"
+                target="_blank"
+                class="link"
+              >
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a
+                href="https://thanishka23-portfolio-website.vercel.app/"
+                target="_blank"
+                class="link"
+              >
+                <i class="fas fa-external-link-alt"></i> Live
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Let's Connect</h2>
+          <div class="header-underline"></div>
+          <p class="section-subtitle">
+            Have a project in mind? Let's build something amazing together!
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h4>Email</h4>
+                <a href="mailto:thanishka2307@gmail.com"
+                  >thanishka2307@gmail.com</a
+                >
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="info-content">
+                <h4>Phone</h4>
+                <a href="tel:+919154683235">+91 91546 83235</a>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h4>Location</h4>
+                <p>India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required id="name" />
+                <span class="form-underline"></span>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  id="email"
+                />
+                <span class="form-underline"></span>
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  rows="6"
+                  placeholder="Your Message"
+                  required
+                  id="message"
+                ></textarea>
+                <span class="form-underline"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Thanishka Varma. All rights reserved.</p>
+        <p>
+          Designed & Developed with <i class="fas fa-heart"></i> by Thanishka
+          Varma
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
