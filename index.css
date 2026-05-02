@@ -423,13 +423,15 @@ body {
 }
 
 .logo-text {
-  display: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 @media (min-width: 768px) {
@@ -589,17 +591,37 @@ body {
 .hero-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
   max-width: 1200px;
   z-index: 1;
   width: 100%;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
+    text-align: left;
+  }
+
+  .hero-text {
+    align-items: flex-start;
+  }
+
+  .hero-description {
+    margin: 0;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    width: auto;
+    align-items: flex-start;
+  }
+
+  .hero-socials {
+    justify-content: flex-start;
   }
 }
 
@@ -607,6 +629,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 .hero-greeting {
@@ -656,6 +679,7 @@ body {
   color: var(--text-secondary);
   line-height: 1.8;
   max-width: 500px;
+  margin: 0 auto;
 }
 
 .hero-actions {
@@ -663,6 +687,8 @@ body {
   flex-direction: column;
   gap: 15px;
   margin-top: 10px;
+  width: 100%;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -675,6 +701,7 @@ body {
   display: flex;
   gap: 15px;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .social-btn {
@@ -720,14 +747,17 @@ body {
 }
 
 .hero-image {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: -1;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
   .hero-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    order: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -735,7 +765,14 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  max-width: 400px;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
+    max-width: 400px;
+  }
 }
 
 .image-wrapper img {
