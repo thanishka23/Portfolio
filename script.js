@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Refresh ScrollTrigger to ensure all positions are calculated
     ScrollTrigger.refresh();
+
+    window.addEventListener('resize', () => {
+        ScrollTrigger.refresh();
+    });
 });
 
 function initTheme() {
@@ -45,6 +49,17 @@ function initNavigation() {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const scrollProgress = document.querySelector('.scroll-progress');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    }
 
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
@@ -78,6 +93,17 @@ function initNavigation() {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            
+            // Close mobile menu
+            if (navMenu) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn ? mobileMenuBtn.querySelector('i') : null;
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+
             const targetId = link.getAttribute('href');
             gsap.to(window, {
                 duration: 1,
@@ -272,6 +298,7 @@ function initCursorSystem() {
 function initProjectCards() {
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
+            if (window.innerWidth < 768) return;
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -290,6 +317,21 @@ function initProjectCards() {
         
         card.addEventListener('mouseleave', () => {
             card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+        });
+
+        // Toggle active class for mobile to show links
+        card.addEventListener('click', (e) => {
+            if (window.innerWidth < 768) {
+                // Toggle active class on the card
+                const isActive = card.classList.contains('active');
+                
+                // Close other cards
+                document.querySelectorAll('.project-card').forEach(c => c.classList.remove('active'));
+                
+                if (!isActive) {
+                    card.classList.add('active');
+                }
+            }
         });
     });
 }

@@ -67,6 +67,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -421,6 +426,12 @@ body {
   display: none;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 @media (min-width: 768px) {
   .logo-text {
     display: inline;
@@ -430,15 +441,71 @@ body {
 }
 
 .nav-menu {
-  display: none;
-  list-style: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: var(--background);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 30px;
+  transition: var(--transition);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu li {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-menu .nav-link {
+  font-size: 20px;
+  display: block;
+  padding: 10px;
+}
+
+.mobile-menu-btn {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  font-size: 18px;
+  z-index: 1002;
 }
 
 @media (min-width: 768px) {
   .nav-menu {
+    position: static;
+    width: auto;
+    max-width: none;
+    height: auto;
+    background: transparent;
+    flex-direction: row;
+    box-shadow: none;
     display: flex;
+    gap: 40px;
+    z-index: auto;
+  }
+
+  .mobile-menu-btn {
+    display: none;
   }
 }
 
@@ -1021,7 +1088,7 @@ body {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -1185,7 +1252,8 @@ body {
   transform: translateY(100%);
 }
 
-.project-card:hover .project-links {
+.project-card:hover .project-links,
+.project-card.active .project-links {
   opacity: 1;
   transform: translateY(0);
 }
