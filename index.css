@@ -370,9 +370,18 @@ body {
   top: 0;
   width: 100%;
   background: transparent;
-  z-index: 1000;
+  z-index: 1001;
   transition: all 0.5s var(--animation-timing);
   padding: 10px 0;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--glass-border);
+  }
 }
 
 .navbar.scrolled {
@@ -436,10 +445,24 @@ body {
 
 @media (min-width: 768px) {
   .logo-text {
-    display: inline;
-    color: var(--text-primary);
-    font-weight: 600;
+    font-size: 20px;
   }
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 25, 41, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--animation-timing);
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .nav-menu {
@@ -458,7 +481,10 @@ body {
   gap: 30px;
   transition: var(--transition);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
+  z-index: 1002;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-menu.active {
@@ -489,7 +515,7 @@ body {
   justify-content: center;
   transition: var(--transition);
   font-size: 18px;
-  z-index: 1002;
+  z-index: 1003;
 }
 
 @media (min-width: 768px) {
