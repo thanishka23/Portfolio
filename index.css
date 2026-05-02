@@ -1132,6 +1132,11 @@ body {
   color: #f0db4f;
 }
 
+.badge-mongodb {
+  background: rgba(71, 162, 72, 0.2);
+  color: #47a248;
+}
+
 .project-card h3 {
   font-size: 20px;
   font-weight: 700;
